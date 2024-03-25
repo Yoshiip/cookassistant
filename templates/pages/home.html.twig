@@ -6,12 +6,18 @@ CookAssist - Accueil
 
 {% block body %}
 
-<div class="container mt-4">
-    <div class="jumbotron">
-    <h1 class="display-4">Bienvenue sur CookAssist</h1>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Commencer à utiliser</a>
-    </p>
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <img src="images/cook.png" class="bi mt-4 mb-3" width="100" height="100" alt="" srcset="">
+        <h1 class="text-body-emphasis">Bienvenue sur CookAssist</h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+        Vous ne savez pas ce que vous allez manger ce soir ?
+        </p>
+        <div class="d-inline-flex gap-2 mb-5">
+            <a class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" href="compose" role="button">Demander au chef</a>
+            <a class="btn btn-outline-primary btn-lg px-4 rounded-pill" href="ingredient/new" role="button">Ajouter un ingrédient</a>
+        </div><br>
+            <a href="https://github.com/Yoshiip/cookassistant">https://github.com/Yoshiip/cookassistant</a>
     </div>
 </div>
 

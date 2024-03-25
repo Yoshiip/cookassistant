@@ -4,14 +4,17 @@
 
 {% block body %}
     <div class="container mt-4">
+        <img src="images/cook.png" class="bi mt-4 mb-3" width="100" height="100" alt="" srcset="">
         <h1>La recette du chef</h1>
-        <h3>En se basant sur</h3>
+        <h4>En se basant sur</h4>
         <ul>
             {% for ingredient in selectedIngredients %}
                 <li>{{ ingredient.name }}</li>
             {% endfor %}
         </ul>
-        <h3>Le chef vous propose...</h3>
+        <h4>Le chef vous propose...</h4>
         <h2>{{ chiefAnswer }}</h2>
+        <small>Ce plat vous coûtera <strong>{{ totalPrice }}€</strong> en ingrédients.</small><br>
+        <a href="/compose" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill">Recommencer</a>
     </div>
 {% endblock %}

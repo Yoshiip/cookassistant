@@ -27,7 +27,7 @@ class ChiefController extends AbstractController
             "messages" => [
                 [
                     "role" => "system",
-                    "content" => "Vous êtes un cuisinier. L'utilisateur va vous soumettre plusieurs ingrédients, et uniquement a partir de ses ingrédients vous devrez renvoyer un plat. Soyez extrêmement concis dans votre réponse, donner simplement le nom du plat. Si certains ingrédiens ont un nom innapropriés, répondez simplement 'Je n'ai rien à vous proposer...'."
+                    "content" => "Vous êtes un cuisinier. L'utilisateur va vous soumettre plusieurs ingrédients, et uniquement a partir de ses ingrédients vous devrez renvoyer un plat. Soyez extrêmement concis dans votre réponse, donner simplement le nom du plat. Soyez créatif, n'hésitez pas à donner des noms de plats alambiqué si l'occassion se présente. Si certains ingrédiens ont un nom innapropriés, répondez simplement 'Je n'ai rien à vous proposer...'."
                 ],
                 [
                     "role" => "user",
@@ -58,15 +58,18 @@ class ChiefController extends AbstractController
         $selectedIngredients = $repository->findBy(['id' => $selectedIngredientIds]);
         
         $ingredientNames = [];
+        $totalPrice = 0;
         foreach ($selectedIngredients as $ingredient) {
             $ingredientNames[] = $ingredient->getName();
+            $totalPrice += $ingredient->getPrice();
         }
         // Retrieve all ingredients from the repository
         // $ingredients = $repository->findAll();
 
         return $this->render('pages/chief/index.html.twig', [
             'selectedIngredients' => $selectedIngredients,
-            'chiefAnswer' => $this->askChief(implode(", ", $ingredientNames))
+            'chiefAnswer' => $this->askChief(implode(", ", $ingredientNames)),
+            'totalPrice' => $totalPrice
         ]);
     }
 

@@ -4,18 +4,43 @@
 
 {% block body %}
     <div class="container mt-4">
+        <img src="images/pot_of_food.png" class="bi mt-4 mb-3" width="100" height="100" alt="" srcset="">
         <h1>Composer une recette</h1>
-        <p>Vous pouvez composer une recette. Sélectionnez les ingrédients que vous souhaitez utiliser, et le chef vous donnera une recette!</p>
+        <p>Vous pouvez composer une recette. Sélectionnez les ingrédients que vous souhaitez utiliser, et le chef vous donnera un délcieux plat à chaque fois!</p>
         <form method="get" action="chief">
             <ul>
                 {% for ingredient in ingredients %}
                     <li>
                         <input class="form-check-input" type="checkbox" name="id[]" id="{{ ingredient.id }}" value="{{ ingredient.id }}">
                         <label class="form-check-label" for="{{ ingredient.id }}">{{ ingredient.name }}</label>
+                        <small>{{ ingredient.price }}€</small>
                     </li>
                 {% endfor %}
             </ul>
-            <button type="submit" class="btn btn-primary">Demander une recette au chef</button>
+            <button type="submit" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill">Demander la recette</button>
         </form>
     </div>
+    <style>
+        form > ul {
+            list-style-type: none;
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+        }
+
+        form > ul > li {
+            background-color: white;
+            padding: 2px;
+            border-radius: 4px;
+        }
+
+        li > small {
+            font-weight: 900;
+            font-size: 0.75em;
+            text-align: right;
+            color: darkgray;
+        }
+    </style>
 {% endblock %}
+

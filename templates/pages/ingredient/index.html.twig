@@ -5,6 +5,7 @@
 {% block body %}
     <div class="container mt-4">
         {% if not ingredients.items is same as([]) %}
+            <img src="/images/cooking.png" class="bi mt-4 mb-3" width="100" height="100" alt="" srcset="">
             <h1>Mes ingrédients</h1>
 
             <div class="count mt-4">
@@ -14,19 +15,22 @@
         <table class="table table-hover mt-4">
         <thead>
             <tr>
-            <th scope="col">Numéro</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prix</th>
-            <th scope="col">Date</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Date d'ajout</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
             {% for ingredient in ingredients %}
                 <tr class="table-primary">
-                    <th scope="row">{{ ingredient.id }}</th>
                     <td>{{ ingredient.name }}</td>
-                    <td>{{ ingredient.price }}</td>
+                    <td>{{ ingredient.price }}€</td>
                     <td>{{ ingredient.createdAt|date('d/m/Y') }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-secondary">Modifier</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

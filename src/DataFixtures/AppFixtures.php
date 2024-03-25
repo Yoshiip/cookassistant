@@ -24,6 +24,9 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $ingredients = [
+            ['name' => 'Pâtes', 'price' => 0.75],
+            ['name' => 'Riz', 'price' => 1.0],
+            ['name' => 'Pomme de terre', 'price' => 0.6],
             ['name' => 'Farine', 'price' => 0.8],
             ['name' => 'Sucre', 'price' => 0.5],
             ['name' => 'Levure chimique', 'price' => 1.2],
@@ -40,17 +43,11 @@ class AppFixtures extends Fixture
             ['name' => 'Ail', 'price' => 0.6],
             ['name' => 'Persil', 'price' => 0.7],
             ['name' => 'Basilic', 'price' => 0.7],
-            ['name' => 'Thym', 'price' => 0.5],
-            ['name' => 'Origane', 'price' => 0.5],
+            ['name' => 'Origan', 'price' => 0.5],
             ['name' => 'Cannelle', 'price' => 0.8],
-            ['name' => 'Muscade', 'price' => 0.8],
-            ['name' => 'Pomme de terre', 'price' => 0.6],
-            ['name' => 'Riz', 'price' => 1.0],
-            ['name' => 'Pâtes', 'price' => 0.75],
             ['name' => 'Blé', 'price' => 1.2],
             ['name' => 'Maïs', 'price' => 1.1],
             ['name' => 'Quinoa', 'price' => 2.0],
-            ['name' => 'Orge', 'price' => 1.5],
             ['name' => 'Semoule', 'price' => 0.8],
             ['name' => 'Patate douce', 'price' => 0.9],
             ['name' => 'Couscous', 'price' => 0.85],
