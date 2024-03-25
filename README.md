@@ -7,6 +7,8 @@ CookAssistant est une petite application faite en Symfony (PHP) permettant d'int
 ## Démo
 Voici une vidéo de démonstration montrant les principales fonctionnalités de l'application.
 
+[Video demo: https://yoshiip.xyz/projects/cookassistant/demo.mp4](https://yoshiip.xyz/projects/cookassistant/demo.mp4)
+
 <video width="640" height="360" controls>
   <source src="https://yoshiip.xyz/projects/cookassistant/demo.mp4" type="video/mp4">
 </video>
