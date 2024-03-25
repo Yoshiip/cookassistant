@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La recette du chef{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>La recette du chef</h1>
+        <h3>En se basant sur</h3>
+        <ul>
+            {% for ingredient in selectedIngredients %}
+                <li>{{ ingredient.name }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Le chef vous propose...</h3>
+        <h2>{{ chiefAnswer }}</h2>
+    </div>
+{% endblock %}

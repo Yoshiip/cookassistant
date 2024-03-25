@@ -10,7 +10,7 @@
             <ul>
                 {% for ingredient in ingredients %}
                     <li>
-                        <input class="form-check-input" type="checkbox" name="{{ ingredient.id }}" id="{{ ingredient.id }}" value="{{ ingredient.id }}">
+                        <input class="form-check-input" type="checkbox" name="id[]" id="{{ ingredient.id }}" value="{{ ingredient.id }}">
                         <label class="form-check-label" for="{{ ingredient.id }}">{{ ingredient.name }}</label>
                     </li>
                 {% endfor %}
